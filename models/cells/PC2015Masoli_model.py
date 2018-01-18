@@ -38,6 +38,7 @@ import os
 
 from neuron import h
 import sciunit
+from sciunit.utils import Versioned
 import numpy as np
 from cerebunit.capabilities.cells.response import ProducesSpikeTrain, ProducesElectricalResponse
 from cerebunit.capabilities.cells.knockout import CanKOAISChannels, CanKOCav2pt1Channels
@@ -67,7 +68,8 @@ class PurkinjeCell( sciunit.Model,
                     ProducesElectricalResponse,
                     CanKOAISChannels,
                     CanKOCav2pt1Channels,
-                    CanDisconnectDendrites ):
+                    CanDisconnectDendrites,
+                    Versioned ):
     '''
     Use case: from models import cells
     pc = cells.PC2015Masoli.PurkinjeCell() # instantiate
