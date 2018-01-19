@@ -313,5 +313,11 @@ class PurkinjeCell( sciunit.Model,
                     current_parameters["current"+str(i+1)]["delay"]
         return list_of_stimuli
     
+    def reset_recording(self):
+        """Empty the recording vectors"""
+        self.cell.rec_t.resize(0)
+        self.cell.vm_soma.resize(0)	
+        self.cell.vm_NOR3.resize(0)
+
 #
 # ==========================================================================
