@@ -81,7 +81,7 @@ class PurkinjeCell( sciunit.Model,
     PC2015Masoli model produces the following capabilities:
     produce_spike_train
     '''
-    uuid = "22dc8fd3-c62b-4e07-9e47-f5829e038d6d"
+    model_uuid = "22dc8fd3-c62b-4e07-9e47-f5829e038d6d"
 
     def __init__(self):
         #
