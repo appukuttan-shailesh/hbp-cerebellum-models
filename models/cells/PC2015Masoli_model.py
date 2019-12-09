@@ -88,7 +88,7 @@ class PurkinjeCell( sciunit.Model,
                 gmlp( model_scale = self.model_scale,
                       model_name = self.model_name )
         ccm(model_mod_path, model_lib_path)
-        #print model_mod_path, model_lib_path, os.getcwd()
+        #print(model_mod_path, model_lib_path, os.getcwd())
         #
         # load NEURON model library
         h.nrn_load_dll(model_lib_path)
@@ -158,7 +158,7 @@ class PurkinjeCell( sciunit.Model,
         # ====save the prediction into a text file
         sp(self, "spike_train", self.prediction_dir_path)
         # ===============================================================
-        print " Done!"
+        print(" Done!")
 
 
     # ++++++++++++Model Capability: produce_voltage_response+++++++++++++
@@ -168,7 +168,7 @@ class PurkinjeCell( sciunit.Model,
     #       ProducesElectricalResponse.
     # ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     def produce_voltage_response( self ):
-        print "Running " + self.model_name + " " + self.model_scale + " ... \n",
+        print("Running " + self.model_name + " " + self.model_scale + " ... \n")
         #
         # ===========Implement produce_voltage_response capability============
         # 
@@ -187,7 +187,7 @@ class PurkinjeCell( sciunit.Model,
         sp(self, "voltage_response", self.prediction_dir_path)
         # ====================================================================
         #
-        print " Done!"
+        print(" Done!")
     
 
     # +++++++++++++++Model Capability: ko_AIS_channels+++++++++++++++++
@@ -207,7 +207,7 @@ class PurkinjeCell( sciunit.Model,
         self.cell.axonAIS.gbar_Nav1_6 = 0
         self.cell.axonAIS.pcabar_Cav2_1 = 0
         # ====================================================================
-        #print " Done!"
+        #print(" Done!")
     
 
     # +++++++++++++++Model Capability: ko_Cav2_1_channels++++++++++++++++
@@ -237,7 +237,7 @@ class PurkinjeCell( sciunit.Model,
         self.cell.axoncoll.pcabar_Cav2_1 = 0
         self.cell.axoncoll2.pcabar_Cav2_1 = 0
         # ====================================================================
-        #print " Done!"
+        #print(" Done!")
     
 
     # +++++++++++++++Model Capability: disconnect_all_dendrites++++++++++++++++
@@ -260,7 +260,7 @@ class PurkinjeCell( sciunit.Model,
         #        h.disconnect(sec = d)
         h.disconnect(sec = self.cell.dend[0])
         # ====================================================================
-        #print " Done!"
+        #print(" Done!")
 
 
     # +++++++++++++++++++++set_simulation_properties++++++++++++++++++++
