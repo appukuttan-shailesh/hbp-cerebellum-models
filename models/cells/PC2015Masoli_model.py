@@ -38,6 +38,7 @@ import os
 
 from neuron import h
 import sciunit
+from sciunit.base import Versioned
 import numpy as np
 from cerebunit.capabilities.cells.response import ProducesSpikeTrain, ProducesElectricalResponse
 from cerebunit.capabilities.cells.knockout import CanKOAISChannels, CanKOCav2pt1Channels
@@ -67,7 +68,8 @@ class PurkinjeCell( sciunit.Model,
                     ProducesElectricalResponse,
                     CanKOAISChannels,
                     CanKOCav2pt1Channels,
-                    CanDisconnectDendrites ):
+                    CanDisconnectDendrites,
+                    Versioned ):
     '''
     Use case: from models import cells
     pc = cells.PC2015Masoli.PurkinjeCell() # instantiate
@@ -79,6 +81,8 @@ class PurkinjeCell( sciunit.Model,
     PC2015Masoli model produces the following capabilities:
     produce_spike_train
     '''
+    model_uuid = "22dc8fd3-c62b-4e07-9e47-f5829e038d6d"
+
     def __init__(self):
         #
         self.model_scale = "cells"
@@ -309,5 +313,11 @@ class PurkinjeCell( sciunit.Model,
                     current_parameters["current"+str(i+1)]["delay"]
         return list_of_stimuli
     
+    def reset_recording(self):
+        """Empty the recording vectors"""
+        self.cell.rec_t.resize(0)
+        self.cell.vm_soma.resize(0)	
+        self.cell.vm_NOR3.resize(0)
+
 #
 # ==========================================================================
