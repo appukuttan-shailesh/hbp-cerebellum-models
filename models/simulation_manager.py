@@ -58,7 +58,7 @@ def discover_cores_activate_multisplit(h):
     p = h.ParallelComputeTool()
     p.change_nthread(cores, 1)
     p.multisplit(1)
-    #print "cores", cores
+    print('cores' + str(cores))
 
 
 def initialize_and_run_NEURON_model(h):
@@ -69,7 +69,7 @@ def initialize_and_run_NEURON_model(h):
     h.finitialize()
     start_time = time.clock()
     h.run()
-    print ("--- %s seconds ---" % (time.clock() - start_time))
+    print("--- %s seconds ---" % (time.clock() - start_time))
 
 
 def check_capability_availability(capability_name="None",
