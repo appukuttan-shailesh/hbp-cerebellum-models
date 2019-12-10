@@ -8,7 +8,7 @@ import math
 import os # add-on to the original Purkinje.py
 
 #import of the dictionary with the conductance
-from PC_param import pc_param
+from .PC_param import pc_param
 
 
 class Purkinje:
