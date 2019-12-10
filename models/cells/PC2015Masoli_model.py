@@ -58,7 +58,7 @@ from ..simulation_manager import initialize_and_run_NEURON_model as irNm
 from ..simulation_manager import save_predictions as sp
 #from ..signal_processing_manager import convert_vm_to_spike_train_from_file as getspikes
 from ..signal_processing_manager import convert_voltage_response_to_spike_train as getspikes
-from PC2015Masoli.Purkinje import Purkinje
+from .PC2015Masoli.Purkinje import Purkinje
 
 
 # ======================SciUNIT-CerebUNIT Based Model=======================
