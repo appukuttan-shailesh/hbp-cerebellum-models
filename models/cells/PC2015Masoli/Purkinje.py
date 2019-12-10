@@ -205,7 +205,7 @@ class Purkinje:
 		self.subsets_paraextra = np.genfromtxt("modelsubsetextra.txt", dtype=[('modelviewsubset','f8'),('channel','S5'),('channel2','S5'),('value','f8')])
 		for para in self.subsets_paraextra:
 			for d in self.ModelViewParmSubset[int(para[0])]:
-				d.insert(para[1])
+				d.insert(para[1].decode('UTF-8'))
 				exec('d.gmax_'+para[2]+' = '+str(para[3]))
 
 		listgmax = []
