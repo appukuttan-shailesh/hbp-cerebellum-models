@@ -206,7 +206,7 @@ class Purkinje:
 		for para in self.subsets_paraextra:
 			for d in self.ModelViewParmSubset[int(para[0])]:
 				d.insert(para[1].decode('UTF-8'))
-				exec('d.gmax_'+para[2]+' = '+str(para[3]))
+				exec('d.gmax_'+para[2].decode('UTF-8')+' = '+para[3].decode('UTF-8'))
 
 		listgmax = []
 		for d in self.ModelViewParmSubset[2]:
