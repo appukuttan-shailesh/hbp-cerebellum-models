@@ -115,7 +115,7 @@ def save_predictions(model, response_type, dir_path):
         time = np.array( getattr( model.cell, "rec_t") )
         # loop through each cell region to save the prediction into
         # a .txt file and also attach the prediction into the model
-        for cell_region, with_thresh in model.cell_regions.iteritems():
+        for cell_region, with_thresh in model.cell_regions.items():
             # create an array of time and voltage responses
             t_vm_array = \
                     np.column_stack( ( time,
@@ -131,7 +131,7 @@ def save_predictions(model, response_type, dir_path):
             model.predictions[response_type].update(a_prediction)
             #
     elif response_type=="spike_train":
-        for cell_region, with_thresh in model.cell_regions.iteritems():
+        for cell_region, with_thresh in model.cell_regions.items():
             spikes = model.predictions[response_type][cell_region]
             np.savetxt( dir_path + "spikes_" + cell_region + ".txt", spikes )
 

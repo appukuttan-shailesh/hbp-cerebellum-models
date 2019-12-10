@@ -69,7 +69,7 @@ def convert_voltage_response_to_spike_train( model ):
     """
     response_type = "spike_train"
     model.predictions.update( { response_type: {} } )
-    for cell_region, with_thresh in model.cell_regions.iteritems():
+    for cell_region, with_thresh in model.cell_regions.items():
         t_vm = model.predictions["voltage_response"][cell_region]
         # convert voltage response into analog signal
         signal = iss( t_vm[:,0], t_vm[:,1], units='mV', time_units='ms' )
