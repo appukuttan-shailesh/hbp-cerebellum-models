@@ -88,11 +88,11 @@ class Purkinje:
 	h.pop_section()
 
 	self.soma.push()
-		h.ion_style("ca_ion", 1, 1, 0, 1, 0)
-		self.soma.eca = 137.52625
-		self.soma.cai = h.cai0_ca_ion
-		self.soma.cao = h.cao0_ca_ion
-		h.pop_section()
+	h.ion_style("ca_ion", 1, 1, 0, 1, 0)
+	self.soma.eca = 137.52625
+	self.soma.cai = h.cai0_ca_ion
+	self.soma.cao = h.cao0_ca_ion
+	h.pop_section()
 
 #Dend coordinate
 	self.sectioncoordinate = np.genfromtxt("coordinate.csv")
